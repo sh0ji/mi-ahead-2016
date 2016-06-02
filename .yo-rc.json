@@ -1,0 +1,10 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Accessibility in the World of Publishing",
+    "packageVersion": "1.0.0",
+    "useSass": true,
+    "deployToGithubPages": true,
+    "githubUsername": "sh0ji",
+    "githubRepository": "mi-ahead"
+  }
+}
