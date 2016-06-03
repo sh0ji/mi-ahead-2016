@@ -14,7 +14,7 @@ module.exports = (grunt) ->
                     'slides/{,*/}*.{md,html}'
                     'js/*.js'
                     'css/*.css'
-                    'resources/**'
+                    'resources/**/*'
                 ]
 
             index:
@@ -29,9 +29,9 @@ module.exports = (grunt) ->
 #                files: ['Gruntfile.coffee']
 #                tasks: ['coffeelint']
 
-            jshint:
-                files: ['js/*.js']
-                tasks: ['jshint']
+#            jshint:
+#                files: ['js/*.js']
+#                tasks: ['jshint']
         
             sass:
                 files: ['css/source/theme.scss']
@@ -82,7 +82,7 @@ module.exports = (grunt) ->
                         'bower_components/**'
                         'js/**'
                         'css/*.css'
-                        'resources/**'
+                        'resources/**/*'
                     ]
                     dest: 'dist/'
                 },{
@@ -142,7 +142,7 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'dist',
         'Save presentation files to *dist* directory.', [
-            'test'
+#            'test'
             'sass'
             'buildIndex'
             'copy'
