@@ -19,6 +19,17 @@
 // Include theme-specific fonts
 @import url(../bower_components/reveal.js/lib/font/source-sans-pro/source-sans-pro.css);
 
+// Include Font-Awesome
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import "bower_components/font-awesome/scss/font-awesome";
+
+// Override reveal
+.reveal {
+  span.fa, i.fa {
+    font-family: 'FontAwesome';
+    font-style: normal;
+  }
+}
 
 // Override theme settings (see ../../bower_components/reveal.js/css/theme/template/settings.scss)
 $backgroundColor: #415d74;
@@ -57,20 +68,80 @@ section.has-light-background {
 @import "../../bower_components/reveal.js/css/theme/template/theme";
 // ---------------------------------------------
 
-.logo {
-  display: inline;
-  max-height: 4em;
-  fill: $mainColor;
-}
+.reveal {
+  
+  [data-background-image] {
+    .shade {
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 1em;
+      padding: 0.8em 1em;
+      margin-bottom: 1em;
+      &>* {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .align-left {
+    text-align: left;
+  }
+  
+  .align-right {
+    text-align: right;
+  }
 
-.cover {
-  height: 8em;
-}
+  .logo {
+    fill: $mainColor;
+    vertical-align: middle;
+  }
 
-.pull-left {
-  float: left;
-}
+  .book-cover {
+    height: 8em;
+    margin-right: 1em;
+  }
 
-h2>* {
-  display: block;
+  .icons {
+    figure {
+      margin-right: 0.2em;
+      img {
+        width: 3em;
+        padding: 0.5em;
+        margin: 0;
+        background-color: $mainColor;
+        border-color: $backgroundColor;
+      }
+      figcaption {
+        &.shade {
+          padding: 0 0.2em;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  
+  .pull-left {
+    float: left;
+  }
+  
+  .pull-right {
+    float: right;
+  }
+
+  .center {
+    display: inline-block;
+  }
+
+  @for $n from 1 through 6 {
+    h#{$n} {
+      .fa {
+        font-weight: normal;
+      }
+      .text {
+        display: block;
+      }
+    }
+    .fa-#{$n} {
+      font-size: $n + em;
+    }
+  }
 }

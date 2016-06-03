@@ -25,9 +25,9 @@ module.exports = (grunt) ->
                 ]
                 tasks: ['buildIndex']
 
-            coffeelint:
-                files: ['Gruntfile.coffee']
-                tasks: ['coffeelint']
+#            coffeelint:
+#                files: ['Gruntfile.coffee']
+#                tasks: ['coffeelint']
 
             jshint:
                 files: ['js/*.js']
